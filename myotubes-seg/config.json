@@ -1,0 +1,22 @@
+{
+  "raw_dir": "data/raw/vt",
+  "out_dir": "data/processed",
+  "seed": 42,
+  "split": {"train": 0.70, "val": 0.15, "test": 0.15},
+  "dhash_threshold": 6,
+  "group_by_uuid": true,
+  "dedupe": true,
+  "exclude": {
+    "missing_mask": true,
+    "empty_masks": true,
+    "max_instance_frac": 0.20
+  },
+  "prepare": {"scale": 0.5},
+  "baseline": {
+    "eval_scale": 0.25,
+    "sato_sigmas": [2, 3, 4, 5],
+    "min_object_px": 30,
+    "train_pixels_per_class": 150000,
+    "min_precision": 0.80
+  }
+}

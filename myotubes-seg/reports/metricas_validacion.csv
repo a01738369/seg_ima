@@ -1,0 +1,3 @@
+,PR-AUC (AP),ROC-AUC,recall@P>=0.80,umbral@P,PR-AUC azar (prevalencia),IoU miotubo,Dice miotubo,precision miotubo,recall miotubo,mIoU
+Clásica (Sato + umbral + morfología),0.0666,0.7202,0.0,,0.0156,0.0831,0.1535,0.1008,0.3222,0.5137
+Clasificador de píxeles (características + HGB),0.1763,0.8968,0.0003,0.9822,0.0156,0.165,0.2832,0.3084,0.2618,0.5721

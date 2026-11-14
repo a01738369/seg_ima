@@ -1,0 +1,141 @@
+{
+  "config": {
+    "raw_dir": "data/raw/vt",
+    "out_dir": "data/processed",
+    "seed": 42,
+    "split": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "dhash_threshold": 6,
+    "group_by_uuid": true,
+    "dedupe": true,
+    "exclude": {
+      "missing_mask": true,
+      "empty_masks": true,
+      "max_instance_frac": 0.2
+    },
+    "prepare": {
+      "scale": 0.5
+    },
+    "baseline": {
+      "eval_scale": 0.25,
+      "sato_sigmas": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "min_object_px": 30,
+      "train_pixels_per_class": 150000,
+      "min_precision": 0.8
+    }
+  },
+  "particion": {
+    "train": 136,
+    "duplicado_descartado": 74,
+    "excluida": 37,
+    "val": 30,
+    "test": 29
+  },
+  "info_particion": {
+    "modo": "duplicados + cell_id",
+    "aviso": "Agrupar por UUID genera un grupo con 44% de las imágenes; se usa solo duplicados + cell_id.",
+    "grupo_mayor_frac": 0.0457516339869281,
+    "n_pares_duplicados": 117
+  },
+  "fuga": {
+    "naive_media": 0.36173913043478256,
+    "naive_std": 0.0677424233167385,
+    "naive_max": 0.5652173913043478,
+    "agrupada": 0.0,
+    "pares casi duplicados (Hamming ≤ 6)": 117,
+    "pares idénticos (Hamming = 0)": 16,
+    "clústeres con ≥ 2 copias": 54,
+    "imágenes involucradas en copias": 138,
+    "imágenes únicas (1 por clúster)": 222,
+    "copia más repetida (veces)": 14,
+    "pares_anotacion_distinta_iou<0.9": 109
+  },
+  "desbalance": [
+    {
+      "conjunto": "original (todas)",
+      "imagenes": 306,
+      "instancias": 2148,
+      "px_miotubo_M": 27.1287,
+      "px_fondo_M": 1514.7588,
+      "pct_miotubo": 1.7594,
+      "ratio_fondo_miotubo": 55.836,
+      "mediana_pct_por_imagen": 0.8614,
+      "imagenes_vacias": 34,
+      "pos_weight_BCE": 55.836
+    },
+    {
+      "conjunto": "train",
+      "imagenes": 136,
+      "instancias": 1144,
+      "px_miotubo_M": 11.8805,
+      "px_fondo_M": 673.4028,
+      "pct_miotubo": 1.7337,
+      "ratio_fondo_miotubo": 56.6814,
+      "mediana_pct_por_imagen": 1.2886,
+      "imagenes_vacias": 0,
+      "pos_weight_BCE": 56.6814
+    },
+    {
+      "conjunto": "val",
+      "imagenes": 30,
+      "instancias": 218,
+      "px_miotubo_M": 2.3622,
+      "px_fondo_M": 148.8032,
+      "pct_miotubo": 1.5627,
+      "ratio_fondo_miotubo": 62.9927,
+      "mediana_pct_por_imagen": 0.955,
+      "imagenes_vacias": 0,
+      "pos_weight_BCE": 62.9927
+    },
+    {
+      "conjunto": "test",
+      "imagenes": 29,
+      "instancias": 327,
+      "px_miotubo_M": 2.199,
+      "px_fondo_M": 143.9276,
+      "pct_miotubo": 1.5049,
+      "ratio_fondo_miotubo": 65.4509,
+      "mediana_pct_por_imagen": 1.2176,
+      "imagenes_vacias": 0,
+      "pos_weight_BCE": 65.4509
+    }
+  ],
+  "metricas_validacion": {
+    "Clásica (Sato + umbral + morfología)": {
+      "PR-AUC (AP)": 0.06661186802351665,
+      "ROC-AUC": 0.7201800190842825,
+      "recall@P>=0.80": 0.0,
+      "umbral@P": NaN,
+      "PR-AUC azar (prevalencia)": 0.015617855509830818,
+      "IoU miotubo": 0.08313836167853983,
+      "Dice miotubo": 0.153513834649343,
+      "precision miotubo": 0.10075911059872676,
+      "recall miotubo": 0.32221883365524717,
+      "mIoU": 0.5136800028932587
+    },
+    "Clasificador de píxeles (características + HGB)": {
+      "PR-AUC (AP)": 0.17627900037080693,
+      "ROC-AUC": 0.8968299647407197,
+      "recall@P>=0.80": 0.00031852529565246855,
+      "umbral@P": 0.9821732640266418,
+      "PR-AUC azar (prevalencia)": 0.015617855509830818,
+      "IoU miotubo": 0.16495637803143856,
+      "Dice miotubo": 0.2831975190524892,
+      "precision miotubo": 0.30842196033342917,
+      "recall miotubo": 0.26178713022262884,
+      "mIoU": 0.5720871488308451
+    }
+  },
+  "umbrales_train": {
+    "Clásica (Sato + umbral + morfología)": 0.37800347805023193,
+    "Clasificador de píxeles (características + HGB)": 0.8890044813909277
+  }
+}
