@@ -5,3 +5,7 @@ __pycache__/
 *.pyc
 .venv/
 .ipynb_checkpoints/
+
+# YOLO training outputs and weights
+runs/
+*.pt
