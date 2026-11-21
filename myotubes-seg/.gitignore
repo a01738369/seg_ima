@@ -1,11 +1,49 @@
-data/raw/
-data/processed/
-notebooks/eda_outputs/
-__pycache__/
-*.pyc
-.venv/
-.ipynb_checkpoints/
+# Datos y artefactos locales
+/data/raw/
+/data/processed/
 
-# YOLO training outputs and weights
-runs/
+# Entornos y cachés de Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/eda_outputs/
+
+# Entrenamientos y pesos YOLO
+/runs/
 *.pt
+*.pth
+
+# Sistemas operativos e IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archivos auxiliares de LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*.log
+
+# Paquetes generados y archivos temporales
+*.zip
+*.tar
+*.gz
+*.tmp
+*.bak
